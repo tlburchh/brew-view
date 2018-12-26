@@ -9315,8 +9315,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview", { us
 
 
 //seed initial data
-db.Beers.deleteMany({}).then(
-  db.Beers.insertMany(beersSeed).then(resp => {
+db.beers.deleteMany({}).then(
+  db.beers.insertMany(beersSeed).then(resp => {
     console.log("Added beers: " + resp);
   }).catch(err => {
       console.log("Error inserting beers");

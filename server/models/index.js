@@ -1,3 +1,3 @@
 module.exports = {
-  Beers: require('./beers.js')
+  beers: require('./beers.js')
 };
