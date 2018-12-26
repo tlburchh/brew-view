@@ -1,13 +1,7 @@
 const router = require("express").Router();
-const getRoutes = require("./get");
-const postRoutes = require("./post");
-const putRoutes = require("./put");
-// const deleteRoutes = require("./delete");
+const beerRoutes = require("./beers");
 
-// get routes, etc....
-router.use("/get", getRoutes);
-router.use("/post", postRoutes);
-router.use("/put", putRoutes);
-// router.use("/delete", deleteRoutes);
+// Beer routes
+router.use("/beers", beerRoutes);
 
 module.exports = router;

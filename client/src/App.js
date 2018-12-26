@@ -16,9 +16,9 @@ class App extends Component {
     this.loadBeers();
   };
   loadBeers = () => {
-    API.getAllBeers()
+    API.getBeers()
     .then(res => {
-      console.log(res)
+      console.log(this.res);
       this.setState({
         data: res.data
       });

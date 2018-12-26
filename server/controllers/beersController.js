@@ -1,7 +1,7 @@
 const db = require('../models');
 module.exports = {
 
-  beers: (req, res) => {
+  findAll: (req, res) => {
     console.log('get all beers');
     db.beers.find()
     .then(beers => {
@@ -13,7 +13,7 @@ module.exports = {
       res.json({ message: 'Error getting all beers'})
     });
   },
-  beerId: (req, res) => {
+  findById: (req, res) => {
     console.log(`Getting beer by id: ${req.params.id}`);
     const id = req.params.id;
     db.beers.findById(id).then(beer => {
@@ -23,4 +23,19 @@ module.exports = {
       res.json({ message: "Error getting beer..." });
     });   
   },
+  update: (req, res) => {
+    const newData = req.body;
+    const id = req.params.id;
+    db.beers.findOneAndUpdate(
+        { _id: id },
+        newData
+    ).then(resp => {
+        console.log(`Updated rating: ${resp}`);
+        res.json(resp);
+    }).catch(err => {
+        console.log(err);
+        res.json({ message: `Error updating rating: ${err}` })
+    });
+},
+
 };

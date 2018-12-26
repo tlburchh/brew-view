@@ -30,6 +30,6 @@ const beerSchema = new Schema ({
     type: Boolean,
     default: false
   }
-})
+});
 
 module.exports = mongoose.model('beer', beerSchema)
