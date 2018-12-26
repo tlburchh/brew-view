@@ -3,7 +3,7 @@ module.exports = {
 
   findAll: (req, res) => {
     console.log('get all beers');
-    db.beers.find()
+    db.beers.find(req.query)
     .then(beers => {
       res.json(beers);
       console.log('success')
