@@ -9,12 +9,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^6.1.0",
+    "mongoose": "^5.3.11",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
-    "lodash": "^4.17.11",
-    "mongoose": "^5.3.11",
-  
-    "react-router-dom": "^4.3.1"
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "concurrently": "^3.6.1",
@@ -25,14 +23,9 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
+    "seed": "node server/scripts/seedDB.js",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-  },
-  "engines": {
-    "node": "8.11.1",
-    "npm": "5.6.x",
-    "yarn": "1.10.1"
   }
 }

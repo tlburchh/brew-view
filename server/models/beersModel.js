@@ -28,8 +28,9 @@ const beerSchema = new Schema ({
   },
   available: {
     type: Boolean,
-    default: false
+    default: false,
   }
 });
 
-module.exports = mongoose.model('Beer', beerSchema)
+const Beer = mongoose.model('Beer', beerSchema)
+module.exports = Beer;

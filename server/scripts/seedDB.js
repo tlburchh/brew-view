@@ -3,9 +3,9 @@ const db = require("../models");
 
 // This file seeds our database
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview");
 
-  const beersSeed = 
+  const beerSeed = 
   [
     {
     "Brewery Name": "Arbor Brewing company Beers",
@@ -9315,9 +9315,14 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview", { us
 
 
 //seed initial data
-db.beers.deleteMany({}).then(
-  db.beers.insertMany(beersSeed).then(resp => {
-    console.log("Added beers: " + resp);
-  }).catch(err => {
-      console.log("Error inserting beers");
-  }))
+db.Beer
+  .remove({})
+  .then(() => db.Beer.collection.insertMany(beerSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
