@@ -5,6 +5,7 @@ import Card from "../../components/Card";
 class Tasting extends Component {
 
   render() {
+    console.log('Where you at Tasting page?' );
     return(
       <div>
         <Card />

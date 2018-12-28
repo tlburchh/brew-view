@@ -35,13 +35,12 @@ class App extends Component {
     return (
      <Router>
        <div>
-        <Nav>
+        <Nav></Nav>
          <Switch>
            <Route exact path="/" component={Admin} />
            <Route exact path="/Admin" component={Admin} />
            <Route exact path="/Tasting" component={Tasting} />
-         </Switch>
-        </Nav>
+         </Switch>       
        </div>
      </Router>
     );
