@@ -9,7 +9,7 @@ class Admin extends Component {
 
     return(
       <div>
-        <Card />
+        <p>check</p>
       </div>
     )
   }
