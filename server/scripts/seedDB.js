@@ -3,7 +3,7 @@ const db = require("../models");
 
 // This file seeds our database
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview", { useNewUrlParser: true });
 
   const beerSeed = 
   [
@@ -9315,14 +9315,21 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview");
 
 
 //seed initial data
-db.Beer
-  .remove({})
-  .then(() => db.Beer.collection.insertMany(beerSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Beer
+//   .remove({})
+//   .then(() => db.Beer.collection.insertMany(beerSeed))
+//   .then(data => {
+//     console.log(data.result.n + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
+//seed initial data
+db.Beer.deleteMany({}).then(
+  db.Beer.insertMany(beerSeed).then(resp => {
+    console.log("Added beers: " + resp);
+  }).catch(err => {
+      console.log("Error inserting beers");
+  }))

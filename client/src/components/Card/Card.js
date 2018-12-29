@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { Consumer } from '../../components/APIContext'
 
+import CardContent from '@material-ui/core/CardContent';
+
+import Typography from '@material-ui/core/Typography';
+// import { Consumer } from '../../components/APIContext';
+// import API from '../../utils/API'
 
 const styles = {
   card: {
@@ -33,53 +33,40 @@ const styles = {
 		super(props);
 
 		this.state = {
-			// beerData:{}
-		};
-	}
-
-
- render(){
-  const { classes } = this.props;
-  const bull = <span className={classes.bullet}>•</span>;
-  console.log('card test')
-  // console.log(beerData)
+      data:[],
+      
+		
+    };
+   
+  }
+  
+  render(){
+    
+    const { classes } = this.props;
+    
+  
   return (
     <React.Fragment>
-    <Consumer>
-      {(value) => {
-        const beerData = value;
-        console.log('Consumer beerData')
-        console.log(beerData);
-
-        return(
+  
       <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Word of the Day
+            {this.props.beer['Brewery Name']}
           </Typography>
           <Typography variant="h5" component="h2">
-            be
-            {bull}
-            nev
-            {bull}o{bull}
-            lent
+          {this.props.beer['Beer Name']}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            adjective
+          {this.props.beer['Beer Style']}
           </Typography>
           <Typography component="p">
-            well meaning and kindly.
+          ABV:{this.props.beer.ABV}
             <br />
-            {'"a benevolent smile"'}
+          IBU:{this.props.beer.IBU}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
       </Card>
-        )
-      }}
-    </Consumer>
+    
     </React.Fragment>
   );
 
