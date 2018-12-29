@@ -72,7 +72,7 @@ class Tasting extends Component {
           <div key={i}>
             <Grid   container>                
                   <Grid style={{width:'400px'}}>
-                    <Paper style={{background:'blue', height: '175px'}}
+                    <Paper style={{background:'blue', height: '175px', margin:'3px'}}
                           className={classes.paper}>
                       <Card 
                         style={{height:'250px'}}
