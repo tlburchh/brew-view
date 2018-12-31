@@ -15,7 +15,8 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.3.11",
     "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2"
+    "react-dom": "^16.7.0-alpha.2",
+    "react-table": "^6.8.6"
   },
   "devDependencies": {
     "concurrently": "^3.6.1",

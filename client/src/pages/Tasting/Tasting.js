@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "../../components/Card";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -38,23 +38,23 @@ class Tasting extends Component {
      
     }
     
-    componentDidMount() {
-      this.loadBeers();
+    // componentDidMount() {
+    //   this.loadBeers();
       
-    };
+    // };
     
-    loadBeers = () => {
-      API.getBeers()
-      .then(res => {
-        console.log(this.res);
-        this.setState({
-          data: res.data
-        });
-        console.log('api check')
-        console.log(this.state.data)
-      })
-      .catch(err => console.log(err));
-    };
+    // loadBeers = () => {
+    //   API.getBeers()
+    //   .then(res => {
+    //     console.log(this.res);
+    //     this.setState({
+    //       data: res.data
+    //     });
+    //     console.log('api check')
+    //     console.log(this.state.data)
+    //   })
+    //   .catch(err => console.log(err));
+    // };
     
     
 
@@ -63,7 +63,7 @@ class Tasting extends Component {
 
     const { classes } = this.props;
 
-    const availableBeer = this.state.data.filter(beer => beer.available !== false);
+    const availableBeer = this.props.data.filter(beer => beer.available !== false);
     console.log('Where you at Tasting page?' );
     console.log('availableBeer', availableBeer)
     return(
