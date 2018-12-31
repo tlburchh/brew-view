@@ -5,6 +5,8 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview", { useNewUrlParser: true });
 
+mongoose.connect(MONGODB_URI);
+
   const beerSeed = 
   [
     {
