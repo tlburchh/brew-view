@@ -71,7 +71,7 @@ class Tasting extends Component {
         {availableBeer.map((beerData, i) => (      
           <div key={i}>
             <Grid   container>                
-                  <Grid style={{width:'400px'}}>
+                  <Grid style={{width:'475px'}}>
                     <Paper style={{background:'blue', height: '175px', margin:'3px'}}
                           className={classes.paper}>
                       <Card 

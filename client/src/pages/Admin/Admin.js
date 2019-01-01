@@ -8,17 +8,27 @@ class Admin extends React.Component {
     super(props);
     this.state = {
       data: this.props.data,
-      available:false
+      available:false,
+      selectedBeer: {}
     };
-  console.log(this.state.data, "Admin State Data")
+  // console.log(this.state.selectedBeer, "State Selected Beer")
   }
+ changeBeer = () => {
+  //  const beerName = this.state.data["Beer Name"];
+  //  const beerOnTap = this.state.data.available;
 
+  //  if ()
+
+  
+
+   return console.log ("BANG!")
+ }
   
   render() {
     const columns = ["Brewery", "Beer Name", "Beer Style", "ABV", "IBU", "On Tap"];
 
     const data = this.state.data.map(beer => {
-      return [`${beer['Brewery Name']}`,` ${beer['Beer Name']}`,` ${beer['Beer Style']}`,` ${beer.ABV}`,` ${beer.IBU}`,` ${beer.available}` ]
+      return [`${beer['Brewery Name']}`,` ${beer['Beer Name']}`,` ${beer['Beer Style']}`,` ${beer.ABV}`,` ${beer.IBU}`,` ${beer.available}`]
     
 
     });
@@ -32,30 +42,43 @@ class Admin extends React.Component {
 
       onRowClick: (rowData, rowState) => {
 
-
-        const beerAvailable= rowData[5]
+        // const beerName = this.state.data
+        
+        
+      //  const selectedBeer= this.state.data.filter(resp => resp["Beer Name"] !== rowData[1])
+      // //  this.state.data.filter(beer => beer["Beer Name"] !== rowData[1]);
+      //   console.log('rowData', rowData[1])
+      //   // console.log('beer name', resp )
+      //   console.log('selected beer', selectedBeer)
+       
+      //  this.setState({
+      //    selectedBeer: selectedBeer
+      //  })
+       
+        // this.changeBeer();
+        // const beerAvailable= rowData
 
         // const available = this.state.data.available
 
-        if(beerAvailable === false){
-         return (
-          beerAvailable=== true,
-          this.setState({
-            beerAvailable: true,
-            // available: true
-           })
-         )
-        }else if( beerAvailable === true) {
-          return( 
-            beerAvailable=== false,
-            this.setState({
-              beerAvailable: false,
-              // available: false
-          })
-          )
-        }
+        // if(beerAvailable === false){
+        //  return (
+        //   beerAvailable=== true,
+        //   this.setState({
+        //     beerAvailable: true,
+        //     // available: true
+        //    })
+        //  )
+        // }else if( beerAvailable === true) {
+        //   return( 
+        //     beerAvailable=== false,
+        //     this.setState({
+        //       beerAvailable: false,
+        //       // available: false
+        //   })
+        //   )
+        // }
 
-        console.log(rowData[5], rowState);
+        console.log(rowData, rowState);
       }
     };
 

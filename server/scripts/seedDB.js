@@ -5,7 +5,7 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview", { useNewUrlParser: true });
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect("mongodb://heroku_7ppwjr98:19m98tte8cjfi5vl0i1t8edv6t@ds145694.mlab.com:45694/heroku_7ppwjr98");
 
   const beerSeed = 
   [

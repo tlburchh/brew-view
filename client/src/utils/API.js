@@ -9,4 +9,4 @@ export default {
   //   return axios.put("/api/beers/" + id, updatedBeer );
   // }
 }
-console.log('axios check')
+
